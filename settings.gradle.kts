@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MVVM Example"
 include(":app")
+include(":noedgetoedge")
