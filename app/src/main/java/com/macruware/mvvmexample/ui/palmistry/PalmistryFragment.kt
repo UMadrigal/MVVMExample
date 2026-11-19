@@ -1,12 +1,10 @@
-package com.macruware.mvvmexample.ui.plamistry
+package com.macruware.mvvmexample.ui.palmistry
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.macruware.mvvmexample.R
-import com.macruware.mvvmexample.databinding.FragmentLuckBinding
 import com.macruware.mvvmexample.databinding.FragmentPalmistryBinding
 
 class PalmistryFragment : Fragment() {

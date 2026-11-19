@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_luck" />
     <fragment
         android:id="@+id/palmistryFragment"
-        android:name="com.macruware.mvvmexample.ui.plamistry.PalmistryFragment"
+        android:name="com.macruware.mvvmexample.ui.palmistry.PalmistryFragment"
         android:label="fragment_palmistry"
         tools:layout="@layout/fragment_palmistry" />
 </navigation>
