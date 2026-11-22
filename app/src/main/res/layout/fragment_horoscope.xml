@@ -3,8 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/primary"
     tools:context=".ui.horoscope.HoroscopeFragment">
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHoroscope"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:spanCount="2"
+        tools:listitem="@layout/item_horoscope"
+        tools:itemCount="4"/>
 
 
 </FrameLayout>
