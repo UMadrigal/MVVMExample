@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.MainActivity">
 
+    <!--Ejemplo de toolbar custom que incluye dos íconos que también se podrían usar como botones de acción,
+    y un texto a modo de título, es posible agregar más íconos-->
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="0dp"
@@ -20,11 +22,14 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.imageview.ShapeableImageView
+            tools:id="@+id/btnMenu"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            app:tint="@color/secondary"
             android:src="@drawable/ic_horoscope"/>
 
         <com.google.android.material.textview.MaterialTextView
+            tools:id="@+id/toolbarTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -37,8 +42,10 @@
             android:textStyle="bold"/>
 
         <com.google.android.material.imageview.ShapeableImageView
+            tools:id="@+id/btnAction"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            app:tint="@color/accent"
             android:src="@drawable/ic_cards"/>
 
     </LinearLayout>
@@ -58,12 +65,16 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/primaryDark"
         app:menu="@menu/bottom_menu"
         app:itemIconTint="@color/bottom_nav_selector"
         app:itemTextColor="@color/bottom_nav_selector"
         app:itemActiveIndicatorStyle="@null"
+        app:itemIconSize="20dp"
+        app:itemTextAppearanceActiveBoldEnabled="true"
+        app:itemTextAppearanceActive="@style/BottomNavTextActive"
+        app:itemTextAppearanceInactive="@style/BottomNavTextInactive"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
