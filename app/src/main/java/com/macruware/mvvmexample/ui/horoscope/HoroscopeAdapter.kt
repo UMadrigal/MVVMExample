@@ -8,7 +8,10 @@ import com.macruware.mvvmexample.R
 import com.macruware.mvvmexample.databinding.ItemHoroscopeBinding
 import com.macruware.mvvmexample.domain.model.HoroscopeInfo
 
-class HoroscopeAdapter (private var horoscopeList: List<HoroscopeInfo> = emptyList()): RecyclerView.Adapter<HoroscopeViewHolder>() {
+class HoroscopeAdapter (private var horoscopeList: List<HoroscopeInfo> = emptyList(),
+    private val onItemSelected: (horoscopeSelected: HoroscopeInfo) -> Unit):
+    RecyclerView.Adapter<HoroscopeViewHolder>() {
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,7 +25,7 @@ class HoroscopeAdapter (private var horoscopeList: List<HoroscopeInfo> = emptyLi
         holder: HoroscopeViewHolder,
         position: Int
     ) {
-        holder.bind(horoscopeList[position])
+        holder.bind(horoscopeList[position], onItemSelected)
     }
 
     override fun getItemCount() = horoscopeList.size
@@ -38,8 +41,13 @@ class HoroscopeViewHolder(view: View): RecyclerView.ViewHolder(view){
 
     private val binding = ItemHoroscopeBinding.bind(view)
     private val context = binding.root.context
-    fun bind(horoscopeInfo: HoroscopeInfo) = with(binding) {
+    fun bind(
+        horoscopeInfo: HoroscopeInfo,
+        onItemSelected: (horoscopeSelected: HoroscopeInfo) -> Unit
+    ) = with(binding) {
         tvTitle.text = context.getString(horoscopeInfo.name)
         ivHoroscope.setImageResource(horoscopeInfo.img)
+
+        parent.setOnClickListener { onItemSelected(horoscopeInfo) }
     }
 }
